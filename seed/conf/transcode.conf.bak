@@ -1,0 +1,7 @@
+log=/opt/seed/log/transcode.log
+seedIP=10.46.176.109
+serverPort=21290
+masterServer=10.46.176.109:80
+cachefile=/opt/cache_video
+tomcat=/opt/JAVA/apache-tomcat/webapps/uploads
+BUCKET_NAME=yuntushijie

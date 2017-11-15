@@ -1,0 +1,39 @@
+直播接口:
+http://192.168.3.147:1234/liveStartup?id=10002&url=rtsp://admin:admin@192.168.3.124:554/h264/ch1/main/av_stream
+
+开始:
+	http://192.168.3.147:1234/liveStartup?id=10001&url=rtsp://admin:1q2w3e4r@192.168.3.120:554/h264/ch1/main/av_stream
+
+	json数据:
+		success:{"id":"10001","url":"http://192.168.3.147/live/10001/livestream.m3u8"}
+
+		fail:   {"id":"10001","url":"fail"}
+关闭：
+	http://192.168.3.147:1234/liveShutdown?id=10001
+	json数据:
+		success:{"id":"10001","result":"success"}
+		fail:   {"id":"10001","result":"fail"}
+
+存储接口:
+开始:
+	http://192.168.3.147:1234/storageStartup?id=10001&url=rtsp://admin:1q2w3e4r@192.168.3.120:554/h264/ch1/main/av_stream
+
+	json数据:
+		success:{"id":"10001","result":"success"}
+		fail:   {"id":"10001","result":"fail"}
+关闭:
+	http://192.168.3.147:1234/storageShutdown?id=10001
+	json数据:
+		success:{"id":"10001","url":"http://192.168.3.147/video/2015/9/21/10001/video/10001_13_04_58.mp4"}
+
+		fail:   {"id":"10001","url":"fail"}
+
+截图:
+	说明:    id = 主视频设备编号（和开始录制视频输入编号相同）  url = 副摄像头URL
+	http://192.168.3.147:1234/getframe?id=10001&url=rtsp://admin:admin@192.168.3.124:554/h264/ch1/main/av_stream
+	说明:             ID  当前图片对应的时间 访问地址 
+	json数据:
+		success:{"id":"10001","time":"33","url":"http://192.168.3.147/video/2015/9/21/10001/picture/33.jpg"}
+
+		fail:   {"id":"10001","time":"-1","url":"fail"}
+http://192.168.3.147:1234/transcode?src=rtsp://admin:admin@192.168.3.124:554/h264/ch1/main/av_stream&dest=rtsp://192.168.3.124:5050/ok

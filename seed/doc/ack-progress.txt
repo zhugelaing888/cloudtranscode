@@ -1,0 +1,20 @@
+应答
+content=
+{
+	"task_id":"612BB03A72E0433988DE6ECDEAC6811B",
+	"result":0
+}
+task_id 任务ID
+result  返回结果 （0：成功；1:其他错误）
+
+进度
+content=
+{
+	"task_id":"612BB03A72E0433988DE6ECDEAC6811B",
+	"duration":100,
+	"frames":44
+}
+
+task_id      任务ID
+duration     视频总帧数
+frames       已转码帧数
